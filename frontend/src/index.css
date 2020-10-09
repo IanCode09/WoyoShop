@@ -1,0 +1,11 @@
+.hero-content {
+    position: absolute;
+    margin: 90px 450px;
+    text-align: center;
+    color: white;    
+}
+
+.hero-content h1 {
+    line-height: 75px;
+    font-size:55px;
+}
