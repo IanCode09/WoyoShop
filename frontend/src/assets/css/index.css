@@ -1,0 +1,24 @@
+.hero-content {
+    position: absolute;
+    margin: 40px 250px;
+    text-align: center;
+    color: white;    
+}
+
+.hero-content h1 {
+    line-height: 60px;
+    font-size:45px;
+}
+
+main {
+    min-height: 80vh;
+}
+
+.card-body a {
+    color: black;
+}
+
+.card-body a:hover {
+    text-decoration: none;
+    color: black;
+}

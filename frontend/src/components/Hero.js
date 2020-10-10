@@ -15,10 +15,6 @@ const Hero = () => {
                 
                 
             </Jumbotron>
-
-            /* <Image src={ImageHero} style={{width: '100%'}}/>
-             */
-
     )
 }
 

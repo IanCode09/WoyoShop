@@ -1,16 +1,21 @@
 import React from 'react';
+import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import HomeScreen from './screens/HomeScreen'
 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-        <Hero />
-      </header>
-    </div>
+    <>
+      <Header />
+      <Hero />
+      <main>
+        <Container>
+          <HomeScreen />
+        </Container>
+      </main>
+    </>
   );
 }
 
