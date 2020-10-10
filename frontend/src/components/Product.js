@@ -1,6 +1,8 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 
+import Rating from './Rating'
+
 const Product = ({product}) => {
     return (
         <Card className='my-3 p-3 rounded'>
@@ -14,9 +16,10 @@ const Product = ({product}) => {
                     </Card.Title>
                 </a>
                 
-                <Card.Text>
+                <Card.Text as='div'>
                     <div>
-                        {product.rating } from <span style={{color: '#144FC3'}}>{product.numReviews} reviews</span>
+                        <Rating value={product.rating} /> 
+                        <span style={{color: '#144FC3'}}>{product.numReviews} reviews</span>
                         <p style={{fontSize: '20px', marginTop: '10px'}}>${product.price}</p>
                     </div>
                 </Card.Text>
