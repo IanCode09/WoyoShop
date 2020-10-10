@@ -99,7 +99,7 @@ const products = [
         brand: 'Nikon',
         category: 'Electronics',
         price: 1500,
-        countInStock: 9,
+        countInStock: 0,
         rating: 2.5,
         numReviews: 45,    
     }

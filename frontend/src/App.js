@@ -13,7 +13,7 @@ function App() {
     <Router>
       <Header />
       <Hero />
-      <main>
+      <main style={{height: '1000px'}}>
         <Container>
           <Route path='/' component={HomeScreen} exact />
           <Route path='/product/:id' component={ProductScreen} /> 
