@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import {Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap'
+import {Row, Col, Image, ListGroup, Button } from 'react-bootstrap'
 
 import products from '../json/products'
 import Rating from '../components/Rating'
@@ -12,7 +12,7 @@ const ProductScreen = ({ match }) => {
 
     return (
         <>
-            <Link to='/' className='btn btn-primary mb-5' >Back</Link>
+            <Link to='/' className='btn btn-primary my-5' >Back</Link>
             <Row>
                 <Col md={5}>
                     <Image src={product.image} alt={product.name} fluid/>
