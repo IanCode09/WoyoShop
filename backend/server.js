@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
     res.send('Api Is Running')
 })
 
-app.get('/products', (req, res) => {
+app.get('/api/products', (req, res) => {
     res.json(products)
 })
 
@@ -16,4 +16,4 @@ app.get('/api/products/:id', (req, res) => {
     res.json(product)
 })
 
-app.listen(5000, console.log('Server running on port 5000'))
+app.listen(8000, console.log('Server running on port 8000'))

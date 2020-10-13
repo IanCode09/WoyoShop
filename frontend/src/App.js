@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <main style={{height: '1000px'}}>
+      <main>
           <Route path='/' component={HomeScreen} exact />
           <Container>
             <Route path='/product/:id' component={ProductScreen} /> 
