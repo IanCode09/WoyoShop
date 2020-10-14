@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-const { ObjectId } = mongoose.Schema
+const { ObjectId } = mongoose.Schema.Types
 
 const reviewSchema = mongoose.Schema({
     name: { type: String, required: true },
