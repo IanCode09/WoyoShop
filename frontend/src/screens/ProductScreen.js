@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 import {Row, Col, Image, ListGroup, Button, Form } from 'react-bootstrap'
@@ -19,7 +18,7 @@ const ProductScreen = ({ history, match }) => {
 
     useEffect(() => {
         dispatch(listProductDetails(match.params.id))
-    }, [dispatch])
+    }, [dispatch, match])
 
     const addToCartHandler = () => {
         history.push(`/cart/${match.params.id}?qty=${qty}`)
