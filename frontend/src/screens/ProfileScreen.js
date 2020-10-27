@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Form, Button, Row, Col } from 'react-bootstrap'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { getUserDetails } from '../actions/userAction'
+import { getUserDetails, updateUserProfile } from '../actions/userAction'
 
 const ProfileScreen = ({ history }) => {
     const [name, setName] = useState('')
@@ -20,6 +20,9 @@ const ProfileScreen = ({ history }) => {
 
     const userLogin = useSelector((state) => state.userLogin)
     const { userInfo } = userLogin
+
+    const userUpdateProfile = useSelector((state) => state.userUpdateProfile)
+    const { success } = userUpdateProfile
 
     useEffect(() => {
         if(!userInfo) {
@@ -39,17 +42,20 @@ const ProfileScreen = ({ history }) => {
         if(password !== confirmPassword) {
             setMessage('Password do not Match')
         } else {
-            // dispatch(register(name, email, password))
+            dispatch(updateUserProfile({ id: user._id, name, email, password }))
         }
     }
 
     return (
         <Row>
             <Col md={3}>
+                <h4 className='' style={{ marginTop: '50px', marginBottom: '10px' }}>User Profile</h4>
+
                 {error && <Message variant='danger'>{error}</Message>}
                 {message && <Message variant='danger'>{message}</Message>}
+                {success && <Message variant='success'>Profil Update </Message>}
                 {loading && <Loader />}
-                <h4 className='' style={{ marginTop: '50px', marginBottom: '10px' }}>User Profile</h4>
+                
                 <Form onSubmit = {submitHandler}>
                     <Form.Group controlId='name'>
                         <Form.Label>Name</Form.Label>
@@ -98,7 +104,7 @@ const ProfileScreen = ({ history }) => {
             </Col>
 
             <Col md={9}>
-                <h4>My Orders</h4>
+                <h4 className='' style={{ marginTop: '50px', marginBottom: '10px' }}>My Orders</h4>
             </Col>
         </Row>
         
