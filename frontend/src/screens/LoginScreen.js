@@ -12,7 +12,6 @@ const LoginScreen = ({ location, history }) => {
     const [password, setPassword] = useState('')
 
     const redirect = location.search ? location.search.split('=')[1] : '/'
-    console.log(redirect);
 
     const dispatch = useDispatch()
 
