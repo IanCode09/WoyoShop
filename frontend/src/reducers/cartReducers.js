@@ -39,7 +39,7 @@ export const cartReducers = ( state = { cartItems : [], shippingAddress: {} }, a
 
         default:
             return state
-    }
+    }   
 }
 
 export default cartReducers
