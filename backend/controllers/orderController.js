@@ -6,7 +6,7 @@ import asyncHandler from 'express-async-handler'
 // @access    Private
 const addOrderItems = asyncHandler(async (req, res) => {
     const {
-        orderItems,
+        orderItems, 
         shippingAddress,
         paymentMethod,
         itemsPrice,
@@ -30,11 +30,9 @@ const addOrderItems = asyncHandler(async (req, res) => {
             shippingPrice,
             totalPrice
         })
-    }
-
-    const createOrder = await order.save()
-
-    res.statatus(201).json(createOrder)
+        const createOrder = await order.save()
+        res.status(201).json(createOrder)
+    }    
 })
 
 export { addOrderItems }
