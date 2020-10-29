@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Form, Button, Row, Col } from 'react-bootstrap'
+import { Table, Form, Button, Row, Col } from 'react-bootstrap'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
 import { getUserDetails, updateUserProfile } from '../actions/userAction'
@@ -107,6 +107,35 @@ const ProfileScreen = ({ history }) => {
 
             <Col md={9}>
                 <h4 className='' style={{ marginTop: '50px', marginBottom: '10px' }}>My Orders</h4>
+                <Table striped bordered hover>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>DATE</th>
+                            <th>TOTAL</th>
+                            <th>PAID</th>
+                            <th>DELIVERED</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1111111</td>
+                            <td>2020-09-21</td>
+                            <td>$191.00</td>
+                            <td>2020-09-27</td>
+                            <td>Yes</td>
+                            <td>DETAILS</td>
+                        </tr>
+                        <tr>
+                            <td>1111111</td>
+                            <td>2020-09-21</td>
+                            <td>$191.00</td>
+                            <td>2020-09-27</td>
+                            <td>Yes</td>
+                            <td>DETAILS</td>
+                        </tr>
+                    </tbody>
+                </Table>
             </Col>
         </Row>
         
