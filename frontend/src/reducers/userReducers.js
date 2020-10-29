@@ -16,7 +16,8 @@ import {
     USER_UPDATE_PROFILE_RESET,
     USER_LIST_REQUEST,
     USER_LIST_SUCCESS,
-    USER_LIST_FAIL
+    USER_LIST_FAIL, 
+    USER_LIST_RESET
 } from '../constants/userConstants'
 
 export const userLoginReducers = (state = {}, action) => {
@@ -92,6 +93,8 @@ export const userListReducers = ( state = { users: [] }, action) => {
             return { loading: false, users: action.payload}
         case USER_LIST_FAIL:
             return { loading: false, error: action.payload }
+        case USER_LIST_RESET:
+            return { users: [] }
         default:
             return state
     }

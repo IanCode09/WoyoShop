@@ -30,6 +30,20 @@ const Header = () => {
                             <LinkContainer to='/cart'>
                                 <Nav.Link style={{marginRight: '30px'}}><i className="fas fa-shopping-cart"></i> Cart</Nav.Link>
                             </LinkContainer>
+
+                            {userInfo && userInfo.isAdmin && (
+                                <NavDropdown title='Admin User' id='adminmenu'>
+                                    <LinkContainer to='/admin/userlist'>
+                                        <NavDropdown.Item>Users</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to='/admin/produclist'>
+                                        <NavDropdown.Item>Products</NavDropdown.Item>
+                                    </LinkContainer>
+                                    <LinkContainer to='/admin/orderlist'>
+                                        <NavDropdown.Item>Orders</NavDropdown.Item>
+                                    </LinkContainer>
+                                </NavDropdown>
+                            )}
                             
                             {userInfo ? (
                                <NavDropdown title={userInfo.name} id='username'>
@@ -46,20 +60,6 @@ const Header = () => {
                                 </LinkContainer>                            
                             )
                             }
-
-                            {userInfo && userInfo.isAdmin && (
-                                <NavDropdown title='Admin User' id='adminmenu'>
-                                    <LinkContainer to='/admin/userlist'>
-                                        <NavDropdown.Item>Users</NavDropdown.Item>
-                                    </LinkContainer>
-                                    <LinkContainer to='/admin/produclist'>
-                                        <NavDropdown.Item>Products</NavDropdown.Item>
-                                    </LinkContainer>
-                                    <LinkContainer to='/admin/orderlist'>
-                                        <NavDropdown.Item>Orders</NavDropdown.Item>
-                                    </LinkContainer>
-                                </NavDropdown>
-                            )}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
