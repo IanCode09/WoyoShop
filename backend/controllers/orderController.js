@@ -50,7 +50,6 @@ const getOrderById = asyncHandler(async (req, res) => {
     }
 })
 
-export { addOrderItems, getOrderById }
 
 
 // @desc      Update Order to Paid
@@ -63,10 +62,10 @@ const updateOrderToPaid = asyncHandler(async (req, res) => {
         order.isPaid = true
         order.paidAt = Date.now()
         order.paymentResult = {
-            id = req.body._id,
-            status = req.body.status,
-            update_time = req.body.update_time,
-            email_address = req.body.email_address
+            id: req.body._id,
+            status: req.body.status,
+            update_time: req.body.update_time,
+            email_address: req.body.email_address
         }
         const updateOrder = await order.save()
         res.json(updateOrder)
