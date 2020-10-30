@@ -4,7 +4,11 @@ import { Table, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
-import { listProducts, deleteProduct, createProduct } from '../actions/productActions'
+import {
+  listProducts,
+  deleteProduct,
+  createProduct,
+} from '../actions/productActions'
 import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
 
 const ProductListScreen = ({ history, match }) => {
@@ -45,14 +49,14 @@ const ProductListScreen = ({ history, match }) => {
         }
     }, [dispatch, userInfo, history, successDelete, successCreate, createdProduct])
 
-    const createProductHandler = () => {
-        dispatch(createProduct())
-    }
-
     const deleteHandler = (id) => {
         if(window.confirm('Are You Sure Want To Delete the Product ?')) {
             dispatch(deleteProduct(id))
         }
+    }
+
+    const createProductHandler = () => {
+        dispatch(createProduct())
     }
 
     return (
@@ -71,6 +75,8 @@ const ProductListScreen = ({ history, match }) => {
 
             {loadingDelete && <Loader />}
             {errorDelete && <Message variant='danger'>{errorDelete}</Message>}
+            {loadingCreate && <Loader />}
+            {errorCreate && <Message variant='danger'>{errorCreate}</Message>}
             {loading ? ( 
                 <Loader /> 
             ) : error ? (
