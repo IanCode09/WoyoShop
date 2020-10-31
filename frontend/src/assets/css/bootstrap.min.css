@@ -11817,7 +11817,7 @@ a.text-danger:focus {
 }
 
 .text-light {
-    color: #ecf0f1 !important
+    color: #6e6e6e !important
 }
 
 a.text-light:hover,
@@ -12157,7 +12157,7 @@ a.text-dark:focus {
 }
 
 .alert-secondary {
-    background-color: #95a5a6
+    background-color: #747979
 }
 
 .alert-success {
