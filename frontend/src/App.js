@@ -26,6 +26,7 @@ function App() {
       <Header />
       <main>
           <Route path='/' component={HomeScreen} exact />
+          <Route path='/search/:keyword' component={HomeScreen} exact />
           <Container>
             <Route path='/order/:id' component={OrderScreen} />
             <Route path='/placeorder' component={PlaceOrderScreen} />
