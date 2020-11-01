@@ -7,6 +7,7 @@ import Rating from '../components/Rating'
 import { listProductDetails, createProductReview } from '../actions/productActions'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
+import Meta from '../components/Meta'
 import { PRODUCT_CREATE_REVIEW_RESET } from '../constants/productConstants'
 
 const ProductScreen = ({ history, match }) => {
@@ -52,7 +53,8 @@ const ProductScreen = ({ history, match }) => {
 
     return (
         <>
-            <Link to='/' className='btn btn-primary my-5' >Back</Link>
+        <Meta title={product.name} />
+            <Link to='/' className='btn btn-primary my-5' >Go Back</Link>
             {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message> : 
             <>
                 <Row>

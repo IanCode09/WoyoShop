@@ -9,6 +9,7 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 import Paginate from '../components/Paginate'
 import ProductCarousel from '../components/ProductCarousel'
+import Meta from '../components/Meta'
 
 const HomeScreen = ({ match }) => {
     const keyword = match.params.keyword
@@ -26,8 +27,16 @@ const HomeScreen = ({ match }) => {
 
     return (
         <>
+            <Meta />
             {/* <Hero /> */}
-            {!keyword && <ProductCarousel />}
+            {!keyword ? ( <ProductCarousel /> 
+            ) : (
+                <Container>
+                    <Link to='/' className='btn btn-primary my-5'>
+                        Go Back
+                    </Link>
+                </Container>
+            )}
                 <Container>
                     { loading ? (
                         <Loader />
